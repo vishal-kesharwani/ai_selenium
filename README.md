@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# AI Selenium SaaS
 
+# AI Selenium 
 A production-level SaaS for automated website testing using AI and Selenium.
 
 ## Features
@@ -75,5 +74,3 @@ A production-level SaaS for automated website testing using AI and Selenium.
 - Add team collaboration features
 - Implement payment/subscription model
 =======
-# ai_selenium
->>>>>>> 0d4a270a5de1b5f14215acd365a44895aa57bdbc
