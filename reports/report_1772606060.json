@@ -1,0 +1,68 @@
+{
+    "timestamp": "2026-03-04 12:04:20.116513",
+    "url": "https://www.youtube.com/",
+    "user_id": "69a72627bee1eca0a228653f",
+    "results": [
+        {
+            "element_type": "link",
+            "selector": "a",
+            "action": "click",
+            "description": "Click link: /",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        },
+        {
+            "element_type": "link",
+            "selector": "a",
+            "action": "click",
+            "description": "Click link: /",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        },
+        {
+            "element_type": "link",
+            "selector": "a",
+            "action": "click",
+            "description": "Click link: About",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        },
+        {
+            "element_type": "link",
+            "selector": "a",
+            "action": "click",
+            "description": "Click link: Press",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        },
+        {
+            "element_type": "link",
+            "selector": "a",
+            "action": "click",
+            "description": "Click link: Copyright",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        },
+        {
+            "element_type": "input",
+            "selector": "#search",
+            "action": "type",
+            "description": "Fill input: search_query",
+            "status": "ERROR",
+            "error": "Traceback (most recent call last):\n  File \"D:\\PROJECTS\\AI-SELENIUM\\ai-selenium-framework\\backend\\test_runner.py\", line 61, in execute_test_action\n    element.send_keys(\"test input\")  # Simple test input\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"D:\\PROJECTS\\AI-SELENIUM\\ai-selenium-framework\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webelement.py\", line 276, in send_keys\n    self._execute(\n    ~~~~~~~~~~~~~^\n        Command.SEND_KEYS_TO_ELEMENT, {\"text\": \"\".join(keys_to_typing(value)), \"value\": keys_to_typing(value)}\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"D:\\PROJECTS\\AI-SELENIUM\\ai-selenium-framework\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webelement.py\", line 508, in _execute\n    return self._parent.execute(command, params)\n           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"D:\\PROJECTS\\AI-SELENIUM\\ai-selenium-framework\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py\", line 432, in execute\n    self.error_handler.check_response(response)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"D:\\PROJECTS\\AI-SELENIUM\\ai-selenium-framework\\venv\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\nselenium.common.exceptions.ElementNotInteractableException: Message: element not interactable\n  (Session info: chrome=145.0.7632.117); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception\nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t0xdd7dd3\n\t0xdd7e14\n\t0xbe1bee\n\t0xc26e0f\n\t0xc2547b\n\t0xc4ea3c\n\t0xc218c4\n\t0xc4ec04\n\t0xc6b621\n\t0xc4e7d6\n\t0xc20049\n\t0xc20e04\n\t0x1036924\n\t0x1031bf7\n\t0x104f5a0\n\t0xdf0f58\n\t0xdf891d\n\t0xde0648\n\t0xde0812\n\t0xdca21a\n\t0x75745d49\n\t0x7747d81b\n\t0x7747d7a1\n\n",
+            "ai_analysis": {
+                "raw_ai_output": "```json\n{\n  \"root_cause\": \"The element is not interactable, which may be due to it being hidden, disabled, or overlapped by another element.\",\n  \"recommended_fix\": \"Ensure that the element is visible and enabled before attempting to send keys. You may need to add waits or check the element's state before interaction.\",\n  \"severity\": \"Medium\",\n  \"ci_cd_impact\": \"This issue can cause test failures, potentially blocking the CI/CD pipeline if not addressed.\"\n}\n```"
+            }
+        }
+    ],
+    "summary": {
+        "total_tests": 6,
+        "passed": 5,
+        "failed": 1
+    }
+}

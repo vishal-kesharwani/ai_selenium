@@ -1,0 +1,346 @@
+/* Custom styles for AI Selenium SaaS */
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  background-color: #f4f6f9;
+  /* Clean light gray/white */
+}
+
+/* Ensure full app height */
+.container-fluid {
+  width: 100%;
+}
+
+/* Global font reset */
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Custom tab styles */
+.custom-tabs .nav-tabs {
+  border: none;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  /* Simple effect */
+}
+
+.custom-tabs .nav-tabs .nav-link {
+  border: none;
+  border-radius: 8px;
+  color: #495057;
+  /* Dark Gray / almost Black */
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 0 2px;
+}
+
+.custom-tabs .nav-tabs .nav-link:hover {
+  background: rgba(0, 123, 255, 0.05);
+  color: #007bff;
+}
+
+.custom-tabs .nav-tabs .nav-link.active {
+  background-color: #007bff !important;
+  /* Solid Blue */
+  background-image: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Card overrides */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.card-header h4,
+.card-header h5 {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Specific background resets */
+.bg-primary,
+.bg-info,
+.bg-success,
+.bg-warning,
+.bg-secondary,
+.bg-dark {
+  background-image: none !important;
+}
+
+/* Card hover effects */
+.shadow-lg {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04) !important;
+}
+
+.shadow-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Button hover effects */
+.btn {
+  font-weight: 500;
+  border-radius: 8px;
+  background-image: none !important;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Primary Button Override */
+.btn-primary {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3 !important;
+  border-color: #0056b3 !important;
+}
+
+.btn-success {
+  background-color: #101010 !important;
+  /* Black for primary actions instead of green */
+  border-color: #101010 !important;
+  color: white !important;
+}
+
+.btn-success:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Form control focus styles */
+.form-control,
+.form-control-lg {
+  border: 1px solid #ced4da;
+  border-radius: 8px !important;
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.form-label {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+/* Alert animations */
+.alert {
+  animation: slideIn 0.3s ease-out;
+  border-radius: 10px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+.navbar-brand {
+  color: #000000 !important;
+}
+
+.navbar .nav-link {
+  color: #495057 !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #007bff !important;
+}
+
+.navbar .text-light {
+  color: #495057 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #495057 !important;
+}
+
+/* Loading spinner */
+.spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Progress bar styling */
+.progress {
+  border-radius: 6px;
+  overflow: hidden;
+  height: 8px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  transition: width 0.6s ease;
+}
+
+.progress-bar.bg-success {
+  background-color: #000000 !important;
+}
+
+/* Table styling */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.table thead th {
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #000000;
+  background-color: #f8f9fa !important;
+}
+
+.table tbody td {
+  border-color: #f1f3f5;
+  color: #343a40;
+  vertical-align: middle;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  border-radius: 16px 16px 0 0;
+  border-bottom: 1px solid #f1f3f5;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.modal-title {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+.modal-header .btn-close {
+  filter: none !important;
+}
+
+/* Badge styling */
+.badge {
+  font-weight: 500;
+  padding: 0.4em 0.6em;
+  border-radius: 6px;
+}
+
+.badge.bg-primary {
+  background-color: #007bff !important;
+}
+
+.badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.badge.bg-success {
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ced4da;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+/* Override inline styles to force White/Blue/Black Theme */
+div[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] {
+  background: #f4f6f9 !important;
+}
+
+/* Strip all local linear-gradients from being visible */
+[style*="linear-gradient"] {
+  background: none !important;
+  background-color: #ffffff !important;
+}

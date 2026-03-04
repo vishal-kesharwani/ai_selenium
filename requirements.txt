@@ -1,0 +1,14 @@
+selenium
+webdriver-manager
+openai
+flask
+python-dotenv
+boto3
+requests
+beautifulsoup4
+flask-jwt-extended
+flask-cors
+pymongo[srv]
+flask-pymongo
+reportlab
+certifi

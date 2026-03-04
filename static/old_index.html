@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Selenium SaaS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        input, button { padding: 10px; margin: 5px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Selenium Testing SaaS</h1>
+
+        <div id="auth">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="register()">Register</button>
+        </div>
+
+        <div id="main" class="hidden">
+            <h2>Test Your Website</h2>
+            <input type="url" id="url" placeholder="Enter website URL" size="50">
+            <button onclick="analyze()">Analyze & Generate Tests</button>
+
+            <div id="recommendations" class="hidden">
+                <h3>Test Recommendations</h3>
+                <ul id="rec-list"></ul>
+                <button onclick="runTests()">Run Tests</button>
+            </div>
+
+            <div id="results" class="hidden">
+                <h3>Test Results</h3>
+                <pre id="results-json"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let token = localStorage.getItem('token');
+        let testRunId = null;
+
+        if (token) {
+            document.getElementById('auth').classList.add('hidden');
+            document.getElementById('main').classList.remove('hidden');
+        }
+
+        async function register() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const res = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            alert(await res.text());
+        }
+
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const res = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            if (res.ok) {
+                const data = await res.json();
+                token = data.access_token;
+                localStorage.setItem('token', token);
+                document.getElementById('auth').classList.add('hidden');
+                document.getElementById('main').classList.remove('hidden');
+            } else {
+                alert('Login failed');
+            }
+        }
+
+        async function analyze() {
+            const url = document.getElementById('url').value;
+            const res = await fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ url })
+            });
+            if (res.ok) {
+                const data = await res.json();
+                testRunId = data.test_run_id;
+                displayRecommendations(data.recommendations);
+            } else {
+                alert('Analysis failed');
+            }
+        }
+
+        function displayRecommendations(recs) {
+            const list = document.getElementById('rec-list');
+            list.innerHTML = '';
+            recs.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec.description || rec.error;
+                list.appendChild(li);
+            });
+            document.getElementById('recommendations').classList.remove('hidden');
+        }
+
+        async function runTests() {
+            const res = await fetch(`/run_tests/${testRunId}`, {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                document.getElementById('results-json').textContent = JSON.stringify(data.results, null, 2);
+                document.getElementById('results').classList.remove('hidden');
+            } else {
+                alert('Test run failed');
+            }
+        }
+    </script>
+</body>
+</html>

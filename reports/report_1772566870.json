@@ -1,0 +1,63 @@
+{
+    "timestamp": "2026-03-04 01:11:10.255771",
+    "url": "https://google.com",
+    "user_id": "69a72627bee1eca0a228653f",
+    "results": [
+        {
+            "element_type": "link",
+            "selector": ".gb_Z",
+            "action": "click",
+            "description": "Click link: Gmail",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        },
+        {
+            "element_type": "link",
+            "selector": ".gb_Z",
+            "action": "click",
+            "description": "Click link: Images",
+            "status": "FAIL",
+            "error": "Message: \nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t0x6e7dd3\n\t0x6e7e14\n\t0x4f1db0\n\t0x53c20a\n\t0x53c4ab\n\t0x57de32\n\t0x55ea84\n\t0x57b621\n\t0x55e7d6\n\t0x530049\n\t0x530e04\n\t0x946924\n\t0x941bf7\n\t0x95f5a0\n\t0x700f58\n\t0x70891d\n\t0x6f0648\n\t0x6f0812\n\t0x6da21a\n\t0x75745d49\n\t0x7747d81b\n\t0x7747d7a1\n",
+            "ai_analysis": {
+                "raw_ai_output": "```json\n{\n  \"root_cause\": \"Unresolved backtrace indicates that the application encountered a critical error, but the specific cause is not identifiable due to missing symbols.\",\n  \"recommended_fix\": \"Enable symbol generation during the build process to allow for better debugging and error tracing. Review the application logs for additional context around the failure.\",\n  \"severity\": \"High\",\n  \"ci_cd_impact\": \"The failure may disrupt the CI/CD pipeline due to the inability to identify and resolve the underlying issue, potentially leading to deployment delays.\"\n}\n```"
+            }
+        },
+        {
+            "element_type": "link",
+            "selector": ".gb_B.gb_Xc",
+            "action": "click",
+            "description": "Click link: https://www.google.co.in/intl/en/about/products?tab=wh",
+            "status": "FAIL",
+            "error": "Message: \nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t0x6e7dd3\n\t0x6e7e14\n\t0x4f1db0\n\t0x53c20a\n\t0x53c4ab\n\t0x57de32\n\t0x55ea84\n\t0x57b621\n\t0x55e7d6\n\t0x530049\n\t0x530e04\n\t0x946924\n\t0x941bf7\n\t0x95f5a0\n\t0x700f58\n\t0x70891d\n\t0x6f0648\n\t0x6f0812\n\t0x6da21a\n\t0x75745d49\n\t0x7747d81b\n\t0x7747d7a1\n",
+            "ai_analysis": {
+                "raw_ai_output": "```json\n{\n  \"root_cause\": \"Unresolved backtrace indicates a potential issue with the application code or environment configuration that prevents proper symbol resolution.\",\n  \"recommended_fix\": \"Investigate the application code for potential issues and ensure that the necessary debugging symbols are included in the build. Additionally, check the environment configuration for any discrepancies.\",\n  \"severity\": \"Medium\",\n  \"ci_cd_impact\": \"This issue may lead to difficulties in debugging and identifying root causes of failures in the CI/CD pipeline, potentially delaying deployments.\"\n}\n```"
+            }
+        },
+        {
+            "element_type": "link",
+            "selector": "#gb_70",
+            "action": "click",
+            "description": "Click link: Sign in",
+            "status": "FAIL",
+            "error": "Message: \nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t0x6e7dd3\n\t0x6e7e14\n\t0x4f1db0\n\t0x53c20a\n\t0x53c4ab\n\t0x57de32\n\t0x55ea84\n\t0x57b621\n\t0x55e7d6\n\t0x530049\n\t0x530e04\n\t0x946924\n\t0x941bf7\n\t0x95f5a0\n\t0x700f58\n\t0x70891d\n\t0x6f0648\n\t0x6f0812\n\t0x6da21a\n\t0x75745d49\n\t0x7747d81b\n\t0x7747d7a1\n",
+            "ai_analysis": {
+                "raw_ai_output": "```json\n{\n  \"root_cause\": \"Unresolved backtrace indicates a potential issue in the application code or a missing symbol file for debugging.\",\n  \"recommended_fix\": \"Investigate the application code for potential errors and ensure that all necessary symbol files are available for debugging.\",\n  \"severity\": \"Medium\",\n  \"ci_cd_impact\": \"This issue may cause build failures or runtime errors, impacting the CI/CD pipeline.\"\n}\n```"
+            }
+        },
+        {
+            "element_type": "link",
+            "selector": "a",
+            "action": "click",
+            "description": "Click link: Advanced search",
+            "status": "PASS",
+            "error": null,
+            "ai_analysis": null
+        }
+    ],
+    "summary": {
+        "total_tests": 5,
+        "passed": 2,
+        "failed": 3
+    }
+}
